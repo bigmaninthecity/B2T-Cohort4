@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<input onclick="newFruit()" type="button" value="Add Fruit">
+	
+	<h1 id='fruit'></h1>
+
+	<script>
+		
+		var fruits = ['apple', 'kiwi', 'orange'];
+
+		function newFruit(){
+
+			var fruit = prompt('Add Fruit');
+			fruits.push(fruit);
+			fruits.sort();
+			console.log(fruits.join(" with "));
+			var display = document.getElementById('fruit');
+			display.innerHTML = fruits.join(" with ");
+			console.log(fruits);
+
+		}
+
+		
+	</script>
+
+</body>
+</html>
