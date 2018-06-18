@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			#colorBox {
+				background-color: black;
+				height: 100px;
+				width: 100px;
+			}
+		</style>
+
+		<div id="colorBox"></div>
+		<input id = "boxColor" type="button" value= "on">
+
+		<script>
+			var offon = document.getElementById("boxColor");
+			offon.addEventListener("click",
+				function(){
+					if(offon.value=="on"){
+						offon.value="off";
+					}else{
+						offon.value="on"
+					}
+				})
+
+				var color = document.getElementById("colorBox");
+			color.addEventListener("mouseenter",
+			function(){
+					if(offon.value=="on"){
+					color.style.backgroundColor="gold";
+					}
+				})
+
+			color.addEventListener("mouseleave",
+				function(){
+					if(offon.value=="on"){
+						color.style.backgroundColor="black";
+					}
+				});
+		
+		</script>
+
+</body>
+</html> 

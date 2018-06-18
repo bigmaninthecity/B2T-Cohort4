@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>OPEN CONSOLE</h1>
+	<input onclick="pushPrompt()" type="button" value="push Prompt" >
+	<input onclick="findLargest()" type="button" value="Find The Largest Number" >
+	<!-- for input its (document.getElementbyID().value); -->
+
+	<script>
+
+		var arr = []
+		var num1 = [0]
+		var num2 = [1]
+		var num3 = [2]
+		
+		function pushPrompt(){
+
+			num1 = prompt('Enter Number');
+			arr.push(num1);
+			console.log(arr);
+			
+			num2 = prompt('Enter Number');
+			arr.push(num2);
+			console.log(arr);
+			
+			num3 = prompt('Enter Number');
+			arr.push(num3);
+			console.log(arr);
+			
+			}
+					
+		function findLargest(){
+			
+		
+			if(num1 >= num2 && num1 >= num3){
+			console.log(num1 + ' is the largest number');
+			}else if (num2 >= num1 && num2 >= num3){
+			console.log(num2 + ' is the largest number');
+			}else{
+			console.log(num3 + ' is the largest number');
+			}
+			}
+			
+	</script>
+
+</body>
+</html>
