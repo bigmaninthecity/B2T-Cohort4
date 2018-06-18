@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Recipe Storage</title>
+	</head>
+		<body>
+			<input id="dishName" type="text" placeholder="Dish Name">
+			<input id="ingredients" type="text" placeholder="Enter Ingredients seperated by commas">
+			<input id="cookTime" type="number" placeholder="Duration">
+			<input onclick="saveData()" type="button" value="Save to CookBook">
+			<ul id='display'></ul>
+
+			<script>
+				var cookBook = []; //used to hold recipes
+
+				function recipe(){
+					return {
+						name: document.getElementById('dishName').value,
+						ingredients: document.getElementById('ingredients').value.split(','),
+						duration: document.getElementById('cookTime').value,
+						dateCreated: new Date().toString() // To convert into a string
+					};
+				}
+
+				function saveData(){
+					cookBook.push( recipe() );
+					alert(cookBook[cookBook.length - 1].name + " has been added!");
+					displayCookBook(); 
+				}
+
+				function displayCookBook(){
+
+					for(var i=0; i<cookBook.length; i++){
+						document.getElementById('display').innerHTML += '<li>' + cookBook[i].name + ' includes ' + cookBook[i].ingredients.join(' and ') + '. It takes '+ cookBook[i].duration + ' to cook</li>';
+					}
+
+				}
+				
+			</script>
+
+		</body>
+</html>
+
+<!--
+	Recipes!!
+		Name of Dish
+		List of Ingredients
+		Time to Cook
+
+	3 inputd for Recipes Properties
+	Button to save recipes
+		Storing receipes into our CookBook
+
+	Search for specific recipe within CookBook
+		edit it
+		delete it
+
+	Display list of recipes	
+	Name includes (Ingredients sperated by 'and'). IT takes Duration to cook.
+	Go through CookBook ( loop through array)
+		fetting recipe's name, ingredients, duration
+		use joi to display ingredients seperated by 'and'
+		display in weboage as an <li> element
+-->

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+		<h1>Library of Books:</h1>
+
+		<ul id="library"></ul>
+
+		<script>
+			 
+			var library  = [
+			  { author: 'Bill Gates', title: 'The Road Ahead', readingStatus: true },
+			  { author: 'Steve Jobs', title: 'Walter Isaacson', readingStatus: true },
+			  { author: 'Suzanne Collins', title:  'Mockingjay: The Final Book of The Hunger Games', readingStatus: false }
+			];
+
+			function readingLibrary(){
+				document.getElementById('library').innerHTML = '';
+				
+				for(var i=0; i<library.length; i++){ 
+
+				if( library[i].readingStatus == true){
+					document.getElementById('library').innerHTML += '<li>Already Read ' +library[i].title + " Writen by " + library[i].author + '</li>';
+				}else{
+					document.getElementById('library').innerHTML += '<li>'+'You still need to read ' +library[i].title + " Writen by " + library[i].author + '</li>';
+				};	
+			}
+			
+		}
+
+		readingLibrary();
+		</script>
+		</body>
+</html>

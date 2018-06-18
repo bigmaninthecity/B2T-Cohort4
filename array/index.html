@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<input id="textbox" type="text" placeholder="Enter The Array Element">
+	<input id="num1" type="number" placeholder="Put Index">
+	<input id="num2" type="number" placeholder="Put Number">
+
+	<!-- buttons -->
+
+	<input onclick="pushText()" type="button" value="push Element">
+
+	<input onclick="shiftaddText()" type="button" value="unshift Element">
+
+	<input onclick="popTextBack()" type="button" value="pop Element">
+
+	<input onclick="shiftRemoveTextFront()" type="button" value="shift Element">
+
+	<input onclick="pushPrompt()" type="button" value="push Prompt" >
+
+	<input onclick="sort()" type="button" value="sort">
+
+	<!-- for input its (document.getElementbyID().value); -->
+
+	<script>
+
+		var arr=[];
+
+		function pushText() {
+
+			arr.push(document.getElementById("textbox").value.toLowerCase());
+			console.log(arr);
+		}
+
+		function shiftaddText() {
+
+			arr.unshift(document.getElementById("textbox").value);
+			console.log(arr);
+		}
+
+		function popTextBack() {
+
+			arr.pop()
+			console.log(arr);
+		}
+
+
+		function shiftRemoveTextFront() {
+
+			arr.shift()
+			console.log(arr);
+		}
+
+		function splice(){
+
+			var index = document.getElementById('num1')
+			var number = document.getElementById('num2')
+			var text = document.getElementById('textbox')
+
+			arr.splice(index, number, textbox);
+			console.log(arr)
+
+		}
+
+		function pushPrompt(){
+
+			var element = prompt('Enter Element for Array');
+			arr.push(element);
+			console.log(arr);
+
+		}
+
+		function sort(){
+			arr.sort();
+			console.log(arr);
+		}
+
+		
+	</script>
+
+</body>
+</html>
